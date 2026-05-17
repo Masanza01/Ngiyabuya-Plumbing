@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ngiyabuya Plumbing NP – Animated Logo</title>
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: #0b1622;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    font-family: Arial, sans-serif;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 44px 56px 38px;
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.06) inset,
+      0 40px 100px rgba(0,0,0,0.7),
+      0 0 140px rgba(0,60,180,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ─────────── GLOBAL ANIMATION TIMING ─────────── */
+
+  /* Entrance: each letter slides/drops in */
+  .ltr-N1 { animation: slideL .6s cubic-bezier(.34,1.56,.64,1) .0s both; }
+  .ltr-P1 { animation: dropD .6s cubic-bezier(.34,1.56,.64,1) .18s both; }
+  .ltr-N2 { animation: slideR .6s cubic-bezier(.34,1.56,.64,1) .36s both; }
+  .ltr-P2 { animation: dropD .6s cubic-bezier(.34,1.56,.64,1) .54s both; }
+
+  @keyframes slideL {
+    from { opacity:0; transform:translateX(-50px); }
+    to   { opacity:1; transform:translateX(0); }
+  }
+  @keyframes slideR {
+    from { opacity:0; transform:translateX(50px); }
+    to   { opacity:1; transform:translateX(0); }
+  }
+  @keyframes dropD {
+    from { opacity:0; transform:translateY(-44px) scale(.7); }
+    to   { opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  /* Tap body appears with a bounce */
+  .tap-body {
+    animation: popIn .5s cubic-bezier(.34,1.56,.64,1) .9s both;
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+  @keyframes popIn {
+    from { opacity:0; transform:scale(.2) rotate(-15deg); }
+    to   { opacity:1; transform:scale(1) rotate(0deg); }
+  }
+
+  /* Tap handle wiggles as if turning on the tap */
+  .tap-handle {
+    animation: handleWiggle 2.4s ease-in-out 1.8s infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+  @keyframes handleWiggle {
+    0%,100% { transform:rotate(0deg); }
+    18%     { transform:rotate(-14deg); }
+    38%     { transform:rotate(8deg); }
+    58%     { transform:rotate(-5deg); }
+    76%     { transform:rotate(2deg); }
+    90%     { transform:rotate(-1deg); }
+  }
+
+  /* Water drop: falls from nozzle then vanishes */
+  .drop {
+    animation: drip 2s ease-in 1.4s infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 0%;
+  }
+  @keyframes drip {
+    0%   { opacity:0; transform:translateY(-6px) scaleY(.4) scaleX(.4); }
+    12%  { opacity:1; transform:translateY(0)    scaleY(1)  scaleX(1); }
+    78%  { opacity:1; transform:translateY(32px) scaleY(1)  scaleX(1); }
+    96%  { opacity:0; transform:translateY(40px) scaleY(.5) scaleX(.5); }
+    100% { opacity:0; transform:translateY(-6px) scaleY(.4) scaleX(.4); }
+  }
+
+  /* Ripple ring when drop hits */
+  .ripple {
+    animation: ripple 2s ease-out 1.4s infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+  }
+  @keyframes ripple {
+    0%,75% { opacity:0; transform:scale(.1); }
+    84%    { opacity:1; transform:scale(1); }
+    100%   { opacity:0; transform:scale(2.6); }
+  }
+
+  /* Screw bolt rotates continuously */
+  .screw-bolt {
+    animation: boltSpin 3s linear 1.6s infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+  }
+  @keyframes boltSpin {
+    from { transform:rotate(0deg); }
+    to   { transform:rotate(360deg); }
+  }
+
+  /* Screw clamp jaw tightens */
+  .clamp-jaw {
+    animation: jawClose 3s ease-in-out 1.6s infinite;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+  @keyframes jawClose {
+    0%,100% { transform:translateY(0); }
+    45%     { transform:translateY(-4px); }
+    55%     { transform:translateY(-4px); }
+  }
+
+  /* Screw body entrance */
+  .screw-body {
+    animation: popIn .5s cubic-bezier(.34,1.56,.64,1) 1.1s both;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  /* Subtitle / company name */
+  .sub-text {
+    animation: fadeUp .8s ease 1.7s both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(10px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* Replay button */
+  .replay {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    color: #ccc;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .25s;
+  }
+  .replay:hover {
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- ══════════════════════════════════════════
+       SVG LOGO  —  N · P(tap) · N · P(screw)
+       viewBox: 0 0 520 130
+  ══════════════════════════════════════════ -->
+  <svg id="logo" xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 520 130" width="520" height="130">
+
+    <!-- ────── N  (red, left) ────── -->
+    <g class="ltr-N1">
+      <rect x="8"  y="10" width="19" height="96" rx="2" fill="#CC0000"/>
+      <rect x="87" y="10" width="19" height="96" rx="2" fill="#CC0000"/>
+      <!-- diagonal -->
+      <polygon points="8,10 27,10 106,106 87,106" fill="#CC0000"/>
+    </g>
+
+    <!-- ────── P  (blue, with dripping tap) ────── -->
+    <g class="ltr-P1">
+      <!-- P vertical stem -->
+      <rect x="118" y="10" width="19" height="96" rx="2" fill="#0000BB"/>
+      <!-- P bowl -->
+      <path d="M137,10 Q194,10 194,46 Q194,82 137,82 L137,62
+               Q172,62 172,46 Q172,30 137,30 Z" fill="#0000BB"/>
+    </g>
+
+    <!-- TAP (sits at top of P bowl) -->
+    <g class="tap-body">
+      <!-- Tap housing bar -->
+      <rect x="140" y="12" width="54" height="14" rx="6" fill="#0000BB"/>
+      <!-- Tap spout neck -->
+      <rect x="178" y="26" width="12" height="18" rx="5" fill="#0000BB"/>
+      <!-- Nozzle tip -->
+      <rect x="174" y="42" width="20" height="9"  rx="4" fill="#0000BB"/>
+      <!-- Handle (wiggles) -->
+      <g class="tap-handle">
+        <rect x="155" y="4"  width="24" height="5"  rx="2.5" fill="#0000BB"/>
+        <rect x="164" y="4"  width="7"  height="14" rx="3"   fill="#0000BB"/>
+      </g>
+    </g>
+
+    <!-- Water drop (drips from nozzle bottom) -->
+    <g class="drop">
+      <!--  teardrop: pointed top, rounded bottom  -->
+      <path d="M184,55 Q178,68 184,78 Q190,88 196,78 Q202,68 196,55 Q190,46 184,55 Z"
+            fill="#1155CC"/>
+    </g>
+    <!-- Ripple at drop landing -->
+    <ellipse class="ripple" cx="190" cy="98" rx="13" ry="5.5"
+             fill="none" stroke="#1155CC" stroke-width="2"/>
+
+    <!-- ────── N  (red, right) ────── -->
+    <g class="ltr-N2">
+      <rect x="210" y="10" width="19" height="96" rx="2" fill="#CC0000"/>
+      <rect x="289" y="10" width="19" height="96" rx="2" fill="#CC0000"/>
+      <polygon points="210,10 229,10 308,106 289,106" fill="#CC0000"/>
+    </g>
+
+    <!-- ────── P  (blue, with G-clamp / screw) ────── -->
+    <g class="ltr-P2">
+      <!-- P vertical stem -->
+      <rect x="320" y="10" width="19" height="96" rx="2" fill="#0000BB"/>
+      <!-- P bowl -->
+      <path d="M339,10 Q396,10 396,46 Q396,82 339,82 L339,62
+               Q374,62 374,46 Q374,30 339,30 Z" fill="#0000BB"/>
+    </g>
+
+    <!-- G-CLAMP / SCREW (sits on P bowl right side) -->
+    <g class="screw-body">
+      <!-- C frame top arm -->
+      <rect x="376" y="10" width="44" height="14" rx="6" fill="#0000BB"/>
+      <!-- C frame vertical spine -->
+      <rect x="404" y="10" width="16" height="84" rx="6" fill="#0000BB"/>
+      <!-- C frame bottom arm (moves slightly on clamp) -->
+      <g class="clamp-jaw">
+        <rect x="376" y="80" width="44" height="14" rx="6" fill="#0000BB"/>
+      </g>
+      <!-- Screw shaft (horizontal) -->
+      <rect x="342" y="38" width="58" height="8" rx="4" fill="#0000BB"/>
+      <!-- Screw threads (decorative lines on shaft) -->
+      <rect x="350" y="38" width="3" height="8" fill="#ffffff" opacity="0.35"/>
+      <rect x="358" y="38" width="3" height="8" fill="#ffffff" opacity="0.35"/>
+      <rect x="366" y="38" width="3" height="8" fill="#ffffff" opacity="0.35"/>
+      <rect x="374" y="38" width="3" height="8" fill="#ffffff" opacity="0.35"/>
+      <!-- Screw bolt head (spins) -->
+      <g class="screw-bolt">
+        <circle cx="336" cy="42" r="11" fill="#0000BB"/>
+        <!-- cross slot -->
+        <rect x="330" y="41" width="12" height="3" rx="1.5" fill="#ffffff" opacity="0.5"/>
+        <rect x="334.5" y="36" width="3" height="12" rx="1.5" fill="#ffffff" opacity="0.5"/>
+      </g>
+    </g>
+
+
+
+  </svg>
+
+  <!-- ══ Company name under the logo ══ -->
+  <svg class="sub-text" xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 520 36" width="520" height="36">
+    <!-- decorative line left -->
+    <line x1="0" y1="14" x2="100" y2="14" stroke="#CC0000" stroke-width="1.5" opacity="0.4"/>
+    <!-- name -->
+    <text x="260" y="20" text-anchor="middle"
+          font-family="Arial Black, Impact, sans-serif"
+          font-size="16" font-weight="900"
+          letter-spacing="3" fill="#0000BB">
+      NGIYABUYA
+    </text>
+    <text x="260" y="34" text-anchor="middle"
+          font-family="Arial Black, Impact, sans-serif"
+          font-size="11" font-weight="700"
+          letter-spacing="5" fill="#CC0000">
+      PLUMBING · NP
+    </text>
+    <!-- decorative line right -->
+    <line x1="420" y1="14" x2="520" y2="14" stroke="#CC0000" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+
+</div>
+
+<button class="replay" onclick="replayLogo()">↺ &nbsp;REPLAY</button>
+
+<script>
+  function replayLogo() {
+    const el = document.getElementById('logo');
+    el.style.display = 'none';
+    void el.offsetHeight;          // force reflow
+    el.style.display = '';
+  }
+</script>
+
+</body>
+</html>

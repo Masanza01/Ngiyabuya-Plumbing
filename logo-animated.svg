@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 140" width="420" height="140">
+  <defs>
+    <style>
+      /* ── Letter entrance ── */
+      .letter-N1 { animation: slideInLeft 0.7s cubic-bezier(.34,1.56,.64,1) 0.1s both; }
+      .letter-N2 { animation: slideInRight 0.7s cubic-bezier(.34,1.56,.64,1) 0.1s both; }
+      .letter-P  { animation: dropIn 0.7s cubic-bezier(.34,1.56,.64,1) 0.35s both; }
+
+      @keyframes slideInLeft {
+        from { opacity:0; transform: translateX(-40px); }
+        to   { opacity:1; transform: translateX(0); }
+      }
+      @keyframes slideInRight {
+        from { opacity:0; transform: translateX(40px); }
+        to   { opacity:1; transform: translateX(0); }
+      }
+      @keyframes dropIn {
+        from { opacity:0; transform: translateY(-30px) scale(0.8); }
+        to   { opacity:1; transform: translateY(0) scale(1); }
+      }
+
+      /* ── Tap body entrance ── */
+      .tap-body { animation: tapAppear 0.5s ease 0.9s both; }
+      @keyframes tapAppear {
+        from { opacity:0; transform-origin:center; transform: scale(0.5); }
+        to   { opacity:1; transform: scale(1); }
+      }
+
+      /* ── Water drop – falls and fades repeatedly ── */
+      .drop {
+        animation: drip 1.8s ease-in 1.2s infinite;
+        transform-origin: 50% 0%;
+      }
+      @keyframes drip {
+        0%   { opacity:0; transform: translateY(0) scale(0.6); }
+        15%  { opacity:1; transform: translateY(0) scale(1); }
+        80%  { opacity:1; transform: translateY(26px) scale(1); }
+        100% { opacity:0; transform: translateY(30px) scale(0.7); }
+      }
+
+      /* ── Water splash rings at bottom of drop ── */
+      .splash {
+        animation: splashOut 1.8s ease-out 1.2s infinite;
+        transform-origin: 50% 50%;
+      }
+      @keyframes splashOut {
+        0%   { opacity:0; transform: scale(0.2); }
+        75%  { opacity:0; }
+        85%  { opacity:0.8; transform: scale(1); }
+        100% { opacity:0; transform: scale(1.6); }
+      }
+
+      /* ── Pipe on the right P (pressure gauge) ── */
+      .pipe-right { animation: pipeSlide 0.6s cubic-bezier(.34,1.56,.64,1) 0.5s both; }
+      @keyframes pipeSlide {
+        from { opacity:0; transform: translateX(20px) scaleX(0.4); }
+        to   { opacity:1; transform: translateX(0) scaleX(1); }
+      }
+
+      /* ── Reg text fade in ── */
+      .reg-text { animation: fadeIn 1s ease 1.4s both; }
+      @keyframes fadeIn {
+        from { opacity:0; } to { opacity:1; }
+      }
+
+      /* ── Subtle pulse on whole logo when idle ── */
+      .logo-group {
+        animation: breathe 4s ease-in-out 2.5s infinite;
+        transform-origin: 210px 70px;
+      }
+      @keyframes breathe {
+        0%,100% { transform: scale(1); }
+        50%      { transform: scale(1.015); }
+      }
+
+      /* ── Tap handle wiggle ── */
+      .tap-handle {
+        animation: tapWiggle 1.8s ease-in-out 1.5s infinite;
+        transform-origin: 50% 100%;
+      }
+      @keyframes tapWiggle {
+        0%,100% { transform: rotate(0deg); }
+        20%     { transform: rotate(-8deg); }
+        40%     { transform: rotate(5deg); }
+        60%     { transform: rotate(-3deg); }
+        80%     { transform: rotate(1deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- White background -->
+  <rect width="420" height="140" fill="white"/>
+
+  <g class="logo-group">
+
+    <!-- ════ LEFT "N" (red) ════ -->
+    <g class="letter-N1">
+      <!-- Drawn as two verticals + diagonal -->
+      <rect x="14" y="18" width="22" height="100" fill="#CC0000"/>
+      <rect x="100" y="18" width="22" height="100" fill="#CC0000"/>
+      <!-- diagonal beam -->
+      <polygon points="14,18 36,18 122,118 100,118" fill="#CC0000"/>
+    </g>
+
+    <!-- ════ CENTER faucet + middle "P" (blue) ════ -->
+    <g class="letter-P">
+      <!-- P bowl (blue semicircle) -->
+      <rect x="140" y="18" width="22" height="100" fill="#0000BB"/>
+      <path d="M162,18 Q220,18 220,55 Q220,90 162,90 L162,68 Q196,68 196,55 Q196,42 162,42 Z" fill="#0000BB"/>
+    </g>
+
+    <!-- ════ TAP over the P ════ -->
+    <g class="tap-body">
+      <!-- tap body / spout housing -->
+      <rect x="163" y="20" width="52" height="16" rx="6" fill="#0000BB"/>
+      <!-- spout neck going down -->
+      <rect x="200" y="36" width="12" height="22" rx="4" fill="#0000BB"/>
+      <!-- spout tip / nozzle -->
+      <rect x="196" y="55" width="20" height="9" rx="4" fill="#0000BB"/>
+      <!-- tap handle -->
+      <g class="tap-handle">
+        <rect x="175" y="8" width="10" height="18" rx="3" fill="#0000BB"/>
+        <rect x="168" y="8" width="24" height="6" rx="3" fill="#0000BB"/>
+      </g>
+    </g>
+
+    <!-- ════ WATER DROP (drips from tap nozzle) ════ -->
+    <g class="drop">
+      <ellipse cx="206" cy="72" rx="7" ry="10" fill="#0055CC"/>
+    </g>
+    <!-- Splash ring at drop landing zone -->
+    <ellipse class="splash" cx="206" cy="100" rx="10" ry="5" fill="none" stroke="#0055CC" stroke-width="2"/>
+
+    <!-- ════ RIGHT "N" / pipe "P" (blue) ════ -->
+    <g class="letter-N2">
+      <!-- Looks like the image has a stylised P with a pipe / pressure clamp -->
+      <!-- Vertical stem -->
+      <rect x="248" y="18" width="22" height="100" fill="#0000BB"/>
+      <!-- Horizontal pipe extending right -->
+      <rect x="270" y="18" width="40" height="14" rx="6" fill="#0000BB"/>
+      <!-- Vertical pipe down right side -->
+      <rect x="296" y="18" width="14" height="60" rx="5" fill="#0000BB"/>
+      <!-- Bottom horizontal connector -->
+      <rect x="270" y="66" width="40" height="14" rx="6" fill="#0000BB"/>
+      <!-- Pipe clamp / C-clamp on right (the tool shape in logo) -->
+      <rect x="318" y="28" width="12" height="42" rx="4" fill="#0000BB"/>
+      <rect x="310" y="24" width="20" height="10" rx="4" fill="#0000BB"/>
+      <rect x="310" y="62" width="20" height="10" rx="4" fill="#0000BB"/>
+      <!-- Screw handle of clamp -->
+      <rect x="325" y="42" width="18" height="8" rx="3" fill="#0000BB"/>
+      <rect x="339" y="36" width="8" height="20" rx="3" fill="#0000BB"/>
+    </g>
+
+    <!-- ════ Reg number ════ -->
+    <text class="reg-text" x="350" y="18" font-family="Arial, sans-serif" font-size="9" fill="#333">Reg:2016/022394/07</text>
+
+    <!-- ════ Company name below ════ -->
+    <text class="reg-text" x="14" y="132" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="#CC0000" letter-spacing="1">NGIYABUYA</text>
+    <text class="reg-text" x="185" y="132" font-family="Arial Black, sans-serif" font-size="11" font-weight="900" fill="#0000BB" letter-spacing="1">P.N. PLUMBING</text>
+
+  </g>
+</svg>
