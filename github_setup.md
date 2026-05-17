@@ -38,10 +38,10 @@ git push -u origin main
 
 ## 🔗 Your Source Repository URL
 
-Once pushed, the URL for your source repository will be:
+Once pushed, the URL for your source repository is:
 ```text
-https://github.com/<YOUR_GITHUB_USERNAME>/Ngiyabuya-Plumbing
+https://github.com/Masanza01/Ngiyabuya-Plumbing
 ```
-*(Simply replace `<YOUR_GITHUB_USERNAME>` with your GitHub username, e.g., if your username is `masan`, your link is `https://github.com/masan/Ngiyabuya-Plumbing`)*
+*(This is your exact repository link!)*
 
 This is the exact link you can copy and paste into your submission form!
