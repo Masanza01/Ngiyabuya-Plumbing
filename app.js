@@ -69,7 +69,7 @@ countUpEls.forEach(el => counterObserver.observe(el));
 
 // ── WhatsApp Quick Contact Form ──────────────────────────────
 (function () {
-  // Chip selection — single-select per group
+  // Chip group (urgency) — single-select
   document.querySelectorAll('.fc-chip-group').forEach(group => {
     group.querySelectorAll('.fc-chip').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -80,20 +80,29 @@ countUpEls.forEach(el => counterObserver.observe(el));
     });
   });
 
-  // Phone input live update
-  const phoneInput = document.getElementById('waPhone');
-  if (phoneInput) phoneInput.addEventListener('input', updateWaLink);
+  // Service scroll list — single-select
+  document.querySelectorAll('.fc-service-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.fc-service-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      updateWaLink();
+    });
+  });
+
+  // Name input live update
+  const nameInput = document.getElementById('waName');
+  if (nameInput) nameInput.addEventListener('input', updateWaLink);
 
   function updateWaLink() {
-    const problem  = (document.querySelector('#problemGroup .fc-chip.active')  || {}).dataset?.value || '';
-    const urgency  = (document.querySelector('#urgencyGroup .fc-chip.active')  || {}).dataset?.value || '';
-    const phone    = (phoneInput ? phoneInput.value.trim() : '');
+    const service  = (document.querySelector('.fc-service-item.active') || {}).dataset?.value || '';
+    const urgency  = (document.querySelector('#urgencyGroup .fc-chip.active') || {}).dataset?.value || '';
+    const name     = nameInput ? nameInput.value.trim() : '';
 
-    // Build the pre-filled message
+    // Build the pre-filled WhatsApp message
     const parts = ['Hi Ngiyabuya Plumbing!'];
-    if (problem) parts.push('Problem: ' + problem);
+    if (name)    parts.push('My name: ' + name);
+    if (service) parts.push('Service needed: ' + service);
     if (urgency) parts.push('Urgency: ' + urgency);
-    if (phone)   parts.push('My number: ' + phone);
     parts.push('Please get back to me. Thank you.');
 
     const msg = encodeURIComponent(parts.join('\n'));
@@ -101,6 +110,6 @@ countUpEls.forEach(el => counterObserver.observe(el));
     if (btn) btn.href = 'https://wa.me/27785300714?text=' + msg;
   }
 
-  // Initialise link on load
+  // Initialise on load
   updateWaLink();
 })();

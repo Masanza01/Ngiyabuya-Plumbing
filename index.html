@@ -472,26 +472,28 @@
         <h4 class="fc-heading">Quick Contact</h4>
         <div class="fc-wa-form" id="waForm">
 
-          <!-- Problem type -->
+          <!-- Service scroll list -->
           <p class="fc-form-label">What do you need help with?</p>
-          <div class="fc-chip-group" id="problemGroup">
-            <button type="button" class="fc-chip" data-value="Burst pipe">Burst pipe</button>
-            <button type="button" class="fc-chip" data-value="Blocked drain">Blocked drain</button>
-            <button type="button" class="fc-chip" data-value="Leak">Leak</button>
-            <button type="button" class="fc-chip" data-value="Installation">Installation</button>
-            <button type="button" class="fc-chip" data-value="Other">Other</button>
+          <div class="fc-service-scroll" id="problemGroup">
+            <button type="button" class="fc-service-item" data-value="Leak Repairs">Leak Repairs</button>
+            <button type="button" class="fc-service-item" data-value="Geyser Installation">Geyser Installation</button>
+            <button type="button" class="fc-service-item" data-value="Drain Cleaning">Drain Cleaning</button>
+            <button type="button" class="fc-service-item" data-value="Emergency Plumbing">Emergency Plumbing</button>
+            <button type="button" class="fc-service-item" data-value="Bathroom Plumbing">Bathroom Plumbing</button>
+            <button type="button" class="fc-service-item" data-value="Pipe Installations">Pipe Installations</button>
+            <button type="button" class="fc-service-item" data-value="Professional Painting">Professional Painting</button>
           </div>
 
           <!-- Urgency -->
           <p class="fc-form-label">How urgent?</p>
           <div class="fc-chip-group fc-chip-group--urgency" id="urgencyGroup">
-            <button type="button" class="fc-chip fc-chip--urgency" data-value="URGENT">🚨 It&apos;s urgent</button>
+            <button type="button" class="fc-chip fc-chip--urgency" data-value="URGENT">&#x1F6A8; It&apos;s urgent</button>
             <button type="button" class="fc-chip fc-chip--urgency" data-value="Not urgent">Not urgent</button>
           </div>
 
-          <!-- Phone -->
-          <p class="fc-form-label">Your phone number</p>
-          <input type="tel" id="waPhone" class="fc-wa-input" placeholder="+27 ..." aria-label="Phone number">
+          <!-- Client name -->
+          <p class="fc-form-label">Your name</p>
+          <input type="text" id="waName" class="fc-wa-input" placeholder="e.g. Sipho..." aria-label="Your name">
 
           <!-- Send button -->
           <a id="waSendBtn" href="#" target="_blank" rel="noopener" class="fc-wa-btn" aria-label="Send via WhatsApp">
