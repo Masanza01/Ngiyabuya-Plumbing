@@ -67,12 +67,40 @@ const counterObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.6 });
 countUpEls.forEach(el => counterObserver.observe(el));
 
-// Contact form
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    alert("Thank you! We'll be in touch shortly.");
-    form.reset();
+// ── WhatsApp Quick Contact Form ──────────────────────────────
+(function () {
+  // Chip selection — single-select per group
+  document.querySelectorAll('.fc-chip-group').forEach(group => {
+    group.querySelectorAll('.fc-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        group.querySelectorAll('.fc-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        updateWaLink();
+      });
+    });
   });
-}
+
+  // Phone input live update
+  const phoneInput = document.getElementById('waPhone');
+  if (phoneInput) phoneInput.addEventListener('input', updateWaLink);
+
+  function updateWaLink() {
+    const problem  = (document.querySelector('#problemGroup .fc-chip.active')  || {}).dataset?.value || '';
+    const urgency  = (document.querySelector('#urgencyGroup .fc-chip.active')  || {}).dataset?.value || '';
+    const phone    = (phoneInput ? phoneInput.value.trim() : '');
+
+    // Build the pre-filled message
+    const parts = ['Hi Ngiyabuya Plumbing!'];
+    if (problem) parts.push('Problem: ' + problem);
+    if (urgency) parts.push('Urgency: ' + urgency);
+    if (phone)   parts.push('My number: ' + phone);
+    parts.push('Please get back to me. Thank you.');
+
+    const msg = encodeURIComponent(parts.join('\n'));
+    const btn = document.getElementById('waSendBtn');
+    if (btn) btn.href = 'https://wa.me/27785300714?text=' + msg;
+  }
+
+  // Initialise link on load
+  updateWaLink();
+})();

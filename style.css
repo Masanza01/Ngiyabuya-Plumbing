@@ -846,6 +846,97 @@ footer {
   .footer-contact-grid { grid-template-columns: 1fr; }
   .fc-form-col { grid-column: unset; }
 }
+
+/* ══════════ WHATSAPP QUICK CONTACT FORM ══════════ */
+.fc-wa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fc-form-label {
+  font-size: .75rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+/* Chip group */
+.fc-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.fc-chip {
+  padding: 7px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: #94a3b8;
+  font-size: .82rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .18s, background .18s, color .18s;
+  user-select: none;
+}
+.fc-chip:hover {
+  border-color: rgba(59,130,246,.45);
+  color: #93c5fd;
+  background: rgba(59,130,246,.08);
+}
+.fc-chip.active {
+  border-color: #3b82f6;
+  background: rgba(59,130,246,.18);
+  color: #bfdbfe;
+}
+/* Urgency chips — slightly wider, two-across */
+.fc-chip-group--urgency { gap: 8px; }
+.fc-chip--urgency { flex: 1; text-align: center; justify-content: center; }
+.fc-chip--urgency.active {
+  border-color: #f59e0b;
+  background: rgba(245,158,11,.14);
+  color: #fcd34d;
+}
+
+/* Phone input */
+.fc-wa-input {
+  width: 100%;
+  padding: 11px 14px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  font-size: .87rem;
+  outline: none;
+  transition: border-color .2s;
+}
+.fc-wa-input::placeholder { color: rgba(255,255,255,.28); }
+.fc-wa-input:focus { border-color: rgba(59,130,246,.5); }
+
+/* Send via WhatsApp button */
+.fc-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 16px;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: #25D366;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .3px;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  user-select: none;
+}
+.fc-wa-btn:hover { background: #1fb055; transform: translateY(-1px); }
+.fc-wa-btn:active { transform: translateY(0); }
 /* ══════════ WHATSAPP FAB ══════════ */
 .wa-fab {
   position:fixed; bottom:28px; right:28px;
