@@ -69,16 +69,7 @@ countUpEls.forEach(el => counterObserver.observe(el));
 
 // ── WhatsApp Quick Contact Form ──────────────────────────────
 (function () {
-  // Chip group (urgency) — single-select
-  document.querySelectorAll('.fc-chip-group').forEach(group => {
-    group.querySelectorAll('.fc-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        group.querySelectorAll('.fc-chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        updateWaLink();
-      });
-    });
-  });
+  // Chip group (urgency) — removed
 
   // Service scroll list — single-select
   document.querySelectorAll('.fc-service-item').forEach(item => {
@@ -94,15 +85,13 @@ countUpEls.forEach(el => counterObserver.observe(el));
   if (nameInput) nameInput.addEventListener('input', updateWaLink);
 
   function updateWaLink() {
-    const service  = (document.querySelector('.fc-service-item.active') || {}).dataset?.value || '';
-    const urgency  = (document.querySelector('#urgencyGroup .fc-chip.active') || {}).dataset?.value || '';
-    const name     = nameInput ? nameInput.value.trim() : '';
+    const service = (document.querySelector('.fc-service-item.active') || {}).dataset?.value || '';
+    const name    = nameInput ? nameInput.value.trim() : '';
 
     // Build the pre-filled WhatsApp message
     const parts = ['Hi Ngiyabuya Plumbing!'];
     if (name)    parts.push('My name: ' + name);
     if (service) parts.push('Service needed: ' + service);
-    if (urgency) parts.push('Urgency: ' + urgency);
     parts.push('Please get back to me. Thank you.');
 
     const msg = encodeURIComponent(parts.join('\n'));
