@@ -724,31 +724,14 @@ footer {
   text-decoration: none;
 }
 .fc-social-btn svg { flex-shrink: 0; }
-.fc-ig:hover { border-color: #E4405F; color: #E4405F; background: rgba(228,64,95,.06); }
-.fc-fb:hover { border-color: #1877F2; color: #1877F2; background: rgba(24,119,242,.06); }
-.fc-tt-soon { opacity: .55; cursor: default; }
-.fc-soon-badge {
-  margin-left: auto;
-  font-size: .6rem;
-  font-weight: 700;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 20px;
-  padding: 2px 8px;
-  color: rgba(255,255,255,.5);
-}
+/* Brand icon colours */
+.fc-ig svg { color: #E4405F; }
+.fc-ig:hover { border-color: #E4405F; color: #E4405F; background: rgba(228,64,95,.09); }
+.fc-fb svg { color: #1877F2; }
+.fc-fb:hover { border-color: #1877F2; color: #1877F2; background: rgba(24,119,242,.09); }
 
-/* ── Col 2: Contact rows ── */
-.fc-contact-list {
-  display: flex;
-  flex-direction: column;
-}
-.fc-contact-row {
-  display: flex;
-  align-items: center;
-  gap: 13px;
+/* -- Col 2: Contact rows -- */
+.fc-contact-list { display: flex; flex-direction: column; }
   padding: 11px 0;
   border-bottom: 1px solid rgba(255,255,255,.04);
   color: #94a3b8;
