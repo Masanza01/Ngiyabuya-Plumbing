@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --blue:       #1D4ED8;
@@ -492,7 +492,7 @@ section { padding:96px 0; }
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: none;
+  border: 1.5px solid #ffffff;
 }
 .owner-avatar-img {
   width: 100%;
