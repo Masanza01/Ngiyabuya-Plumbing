@@ -69,13 +69,29 @@ countUpEls.forEach(el => counterObserver.observe(el));
 
 // ── WhatsApp Quick Contact Form ──────────────────────────────
 (function () {
-  // Chip group (urgency) — removed
+  // Service list accordion toggle
+  const serviceToggle = document.getElementById('serviceToggle');
+  const serviceList   = document.getElementById('problemGroup');
+  if (serviceToggle && serviceList) {
+    serviceToggle.addEventListener('click', () => {
+      const isOpen = serviceToggle.getAttribute('aria-expanded') === 'true';
+      serviceToggle.setAttribute('aria-expanded', !isOpen);
+      serviceList.classList.toggle('fc-service-scroll--hidden', isOpen);
+      serviceList.classList.toggle('fc-service-scroll--open',   !isOpen);
+    });
+  }
 
-  // Service scroll list — single-select
+  // Service scroll list — single-select; collapse after pick
   document.querySelectorAll('.fc-service-item').forEach(item => {
     item.addEventListener('click', () => {
       document.querySelectorAll('.fc-service-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
+      // Update toggle label to show chosen service
+      const label = document.querySelector('.fc-service-toggle-label');
+      if (label) label.textContent = item.dataset.value;
+      // Collapse list after selection
+      if (serviceToggle) serviceToggle.setAttribute('aria-expanded', 'false');
+      if (serviceList)   { serviceList.classList.add('fc-service-scroll--hidden'); serviceList.classList.remove('fc-service-scroll--open'); }
       updateWaLink();
     });
   });

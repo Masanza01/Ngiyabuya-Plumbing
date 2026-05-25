@@ -467,9 +467,12 @@
         <h4 class="fc-heading">Quick Contact</h4>
         <div class="fc-wa-form" id="waForm">
 
-          <!-- Service scroll list -->
-          <p class="fc-form-label">What do you need help with?</p>
-          <div class="fc-service-scroll" id="problemGroup">
+          <!-- Service scroll list — collapsible -->
+          <button type="button" class="fc-service-toggle" id="serviceToggle" aria-expanded="false" aria-controls="problemGroup">
+            <span class="fc-service-toggle-label">What do you need help with?</span>
+            <svg class="fc-toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="fc-service-scroll fc-service-scroll--hidden" id="problemGroup">
             <button type="button" class="fc-service-item" data-value="Leak Repairs">Leak Repairs</button>
             <button type="button" class="fc-service-item" data-value="Geyser Installation">Geyser Installation</button>
             <button type="button" class="fc-service-item" data-value="Drain Cleaning">Drain Cleaning</button>
