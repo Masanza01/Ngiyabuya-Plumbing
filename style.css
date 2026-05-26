@@ -37,7 +37,7 @@ a { text-decoration:none; color:inherit; }
 button { border:none; background:none; cursor:pointer; font-family:inherit; }
 .container { width:90%; max-width:1180px; margin:0 auto; }
 
-/* ── Buttons ── */
+/* ÔöÇÔöÇ Buttons ÔöÇÔöÇ */
 .btn {
   display:inline-flex; align-items:center; gap:8px;
   padding:13px 30px; border-radius:50px; font-weight:600;
@@ -52,14 +52,14 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
 .btn-ghost { border-color:rgba(29,78,216,.25); color:var(--blue); background:var(--blue-dim); }
 .btn-ghost:hover { background:rgba(29,78,216,.15); transform:translateY(-2px); }
 
-/* ── Reveal ── */
+/* ÔöÇÔöÇ Reveal ÔöÇÔöÇ */
 .reveal { opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in { opacity:1; transform:none; }
 
 
-/* ══════════ MOBILE AVAILABILITY BADGE ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ MOBILE AVAILABILITY BADGE ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 .nav-avail-badge {
-  display: none; /* hidden on desktop — shown only via mobile media query */
+  display: none; /* hidden on desktop ÔÇö shown only via mobile media query */
   align-items: center;
   gap: 6px;
   padding: 5px 11px 5px 8px;
@@ -107,7 +107,7 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
   70%  { transform: scale(2.4); opacity: 0;  }
   100% { transform: scale(2.4); opacity: 0;  }
 }
-/* ══════════ NAV ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ NAV ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #nav {
   position:fixed; top:0; left:0; right:0; z-index:200;
   padding:12px 0;
@@ -153,7 +153,7 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
 .hamburger.open span:nth-child(2) { opacity:0; }
 .hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
 
-/* ══════════ HERO ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ HERO ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #hero {
   min-height: 80vh;
   display: flex;
@@ -235,7 +235,7 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
   object-position: center;
 }
 
-/* ── Features Bar ── */
+/* ÔöÇÔöÇ Features Bar ÔöÇÔöÇ */
 .features-bar {
   position: relative;
   display: grid;
@@ -295,7 +295,7 @@ button { border:none; background:none; cursor:pointer; font-family:inherit; }
 
 
 
-/* ══════════ SECTION SHARED ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ SECTION SHARED ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 section { padding:96px 0; }
 .section-label {
   font-family:'Montserrat',sans-serif; font-size:.72rem;
@@ -313,7 +313,7 @@ section { padding:96px 0; }
 .section-head.center { text-align:center; }
 .section-head.center .section-sub { margin:0 auto; }
 
-/* ══════════ SERVICES ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ SERVICES ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #services { background:var(--bg2); }
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .svc-card {
@@ -350,11 +350,11 @@ section { padding:96px 0; }
   color:var(--blue); font-family:'Montserrat',sans-serif;
 }
 
-/* ══════════ ABOUT US ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ ABOUT US ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #about { background:var(--bg); }
 .why-grid {
   display:grid; grid-template-columns:1fr 1fr;
-  gap:60px; align-items:start;
+  gap:60px; align-items:stretch;
 }
 .why-list { display:flex; flex-direction:column; gap:24px; }
 .why-item { display:flex; gap:18px; align-items:flex-start; }
@@ -367,7 +367,7 @@ section { padding:96px 0; }
 }
 .why-item h4 { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.98rem; margin-bottom:6px; color:var(--navy); }
 .why-item p { color:var(--text60); font-size:.87rem; line-height:1.6; }
-/* ══ About Visual Column ══ */
+/* ÔòÉÔòÉ About Visual Column ÔòÉÔòÉ */
 .why-visual-wrap {
   display: flex;
   flex-direction: column;
@@ -378,15 +378,13 @@ section { padding:96px 0; }
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 560px;
+  height: auto;
   border: 1px solid var(--border);
 }
 
 .why-visual img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   display: block;
 }
 
@@ -400,19 +398,16 @@ section { padding:96px 0; }
 
 .why-visual-overlay { display: none; }
 
-/* Animated stats overlay — sits at the bottom of the image */
+/* Animated stats overlay ÔÇö sits at the bottom of the image */
 .why-stats-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 18, 40, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 20px 24px 14px;
   z-index: 4;
   border-radius: 0 0 0 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .why-stats-inner {
@@ -462,14 +457,13 @@ section { padding:96px 0; }
 .why-stats-tagline {
   text-align: center;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.7);
   letter-spacing: 0.3px;
-  border-top: 1px solid rgba(255,255,255,0.07);
   padding-top: 10px;
   margin: 0;
 }
 
-/* Owner identity card — solid beige pill */
+/* Owner identity card ÔÇö solid beige pill */
 .owner-card {
   position: absolute;
   top: 20px;
@@ -515,7 +509,7 @@ section { padding:96px 0; }
   letter-spacing: .2px;
 }
 
-/* ══════════ GALLERY ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ GALLERY ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #gallery { background:var(--bg2); }
 .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:auto auto; gap:16px; }
 .gal-item { border-radius:var(--r); overflow:hidden; position:relative; cursor:pointer; box-shadow:var(--shadow-sm); }
@@ -538,7 +532,7 @@ section { padding:96px 0; }
 .gal-item:nth-child(1) { min-height:380px; }
 .gal-item:nth-child(n+2) { min-height:180px; }
 
-/* ══════════ TESTIMONIALS ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ TESTIMONIALS ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #testimonials { background:var(--bg); }
 .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .review-card {
@@ -559,7 +553,7 @@ section { padding:96px 0; }
 .review-name { font-weight:600; font-size:.9rem; font-family:'Montserrat',sans-serif; color:var(--navy); }
 .review-loc { font-size:.78rem; color:var(--text35); }
 
-/* ══════════ EMERGENCY CTA ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ EMERGENCY CTA ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 #emergency {
   background-color: #0b1121;
   padding: 80px 0;
@@ -721,7 +715,7 @@ section { padding:96px 0; }
   }
 }
 
-/* ══════════ FOOTER ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ FOOTER ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 footer {
   background: #0a1628;
   padding: 56px 0 0;
@@ -751,7 +745,7 @@ footer {
   max-width: 440px;
 }
 
-/* ── 3-column contact grid ── */
+/* ÔöÇÔöÇ 3-column contact grid ÔöÇÔöÇ */
 .footer-contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1.5fr;
@@ -771,7 +765,7 @@ footer {
   margin-bottom: 20px;
 }
 
-/* ── Col 1: Social pill buttons ── */
+/* ÔöÇÔöÇ Col 1: Social pill buttons ÔöÇÔöÇ */
 .fc-social-list {
   display: flex;
   flex-direction: column;
@@ -841,7 +835,7 @@ footer {
   border-color: rgba(59,130,246,.35);
 }
 
-/* ── Col 3: Quick Message form ── */
+/* ÔöÇÔöÇ Col 3: Quick Message form ÔöÇÔöÇ */
 .fc-form-col { }
 .fc-form {
   display: flex;
@@ -894,7 +888,7 @@ footer {
   gap: 8px;
 }
 
-/* ── Responsive ── */
+/* ÔöÇÔöÇ Responsive ÔöÇÔöÇ */
 @media (max-width: 900px) {
   .footer-contact-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -904,7 +898,7 @@ footer {
   .fc-form-col { grid-column: unset; }
 }
 
-/* ══════════ WHATSAPP QUICK CONTACT FORM ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ WHATSAPP QUICK CONTACT FORM ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 .fc-wa-form {
   display: flex;
   flex-direction: column;
@@ -948,7 +942,7 @@ footer {
   background: rgba(59,130,246,.18);
   color: #bfdbfe;
 }
-/* Urgency chips — slightly wider, two-across */
+/* Urgency chips ÔÇö slightly wider, two-across */
 .fc-chip-group--urgency { gap: 8px; }
 .fc-chip--urgency { flex: 1; text-align: center; justify-content: center; }
 .fc-chip--urgency.active {
@@ -1080,7 +1074,7 @@ footer {
 }
 .fc-wa-btn:hover { background: #1fb055; transform: translateY(-1px); }
 .fc-wa-btn:active { transform: translateY(0); }
-/* ══════════ WHATSAPP FAB ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ WHATSAPP FAB ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 .wa-fab {
   position:fixed; bottom:28px; right:28px;
   width:56px; height:56px; border-radius:50%;
@@ -1092,7 +1086,7 @@ footer {
 .wa-fab:hover { transform:scale(1.1); }
 @keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)} 50%{box-shadow:0 4px 36px rgba(37,211,102,.65)} }
 
-/* ══════════ RESPONSIVE ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ RESPONSIVE ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 @media(max-width:1200px){
 }
 
@@ -1140,7 +1134,7 @@ footer {
   }
   .nav-links.open a { font-size: 1.15rem; color: var(--navy); }
   .hamburger { display: flex; z-index: 210; }
-  /* Availability badge — show on mobile, centred between logo and hamburger */
+  /* Availability badge ÔÇö show on mobile, centred between logo and hamburger */
   .nav-inner { justify-content: space-between; }
   .nav-avail-badge { display: flex; order: 2; }
   .nav-brand { order: 1; }
@@ -1185,7 +1179,7 @@ footer {
   .nav-logo-img { height: 40px; }
 }
 
-/* ══════════ REDUCED MOTION ══════════ */
+/* ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ REDUCED MOTION ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ */
 @media(prefers-reduced-motion:reduce){
   *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
 }
