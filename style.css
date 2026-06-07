@@ -877,15 +877,40 @@ footer {
 .fc-form button:hover { background: #2563eb; }
 
 /* Footer bottom bar */
+.footer-bottom {
   border-top: 1px solid rgba(255,255,255,.06);
-  padding: 20px 0;
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: .76rem;
-  color: rgba(255,255,255,.25);
   flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copyright {
+  font-family: 'Inter', sans-serif;
+  font-size: .88rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  letter-spacing: .2px;
+}
+.footer-copyright strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.footer-bottom-areas {
+  display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+}
+.footer-bottom-areas span {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.65);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .2px;
 }
 
 /* ÔöÇÔöÇ Responsive ÔöÇÔöÇ */
